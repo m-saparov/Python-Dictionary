@@ -1,11 +1,9 @@
 def most_common_char(text: str) -> str:
-    char_count: dict[str, int] = {}
-
-    for char in text:
-        char_count[char] = char_count.get(char, 0) + 1
-
-    most_common = max(char_count, key=char_count.get)
-    return most_common
+    mx = text[0]
+    for ch in text:
+        if text.count(ch) > text.count(mx):
+            mx = ch
+    return mx
 
 
 def main():
